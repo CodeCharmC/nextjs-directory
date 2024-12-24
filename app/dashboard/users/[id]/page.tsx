@@ -1,7 +1,12 @@
 
 
-export default function page() {
+export default function page({ params }: { params: { id: string } }) {
+   const {id} = params
    return (
-      <div>Users Details Page</div>
+      <>
+         <h1 className="text-3xl font-bold  flex justify-center pt-3">
+            User {id} Details Page
+         </h1>         
+      </>
    )
 }
