@@ -1,8 +1,10 @@
 
-import React from 'react'
-
-export default function layout() {
+export default function layout(
+   { children }: Readonly<{ children: React.ReactNode }>  
+) {
    return (
-      <div>layout</div>
+      <main className="font-work-sans">
+         {children}
+      </main>
    )
 }
