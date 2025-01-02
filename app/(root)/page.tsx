@@ -1,9 +1,9 @@
-import React from 'react'
 
-export default function page() {
+
+export default function Page() {
    return (
-      <>
-         <h1>Home</h1>
-      </>
+      <main className='flex min-h-screen flex-col items-center justify-between p-2'>
+         <h1>Home page</h1>
+      </main>
    )
 }
