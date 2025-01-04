@@ -5,3 +5,34 @@
 html {
    scroll-behavior: smooth;
 }
+
+@layer utilities {
+   .dot_container {
+      @apply w-full bg-transparent min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6 ;
+   }
+   .pattern {
+      background-image: radial-gradient(
+      circle,
+      rgba(255, 182, 193, 0.4) 1px,
+      transparent 1px
+   );
+   background-size: 10px 10px;
+   background-position: center;
+   background-repeat: repeat;
+   }
+   .tag {
+      @apply px-6 py-3 font-work-sans font-bold rounded-sm uppercase relative tag-tri;
+   }
+
+   .tag-tri {
+      @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-white before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-white after:border-l-[10px] after:border-l-transparent;
+   }
+
+   .section{
+      @apply flex items-center justify-center
+   }
+
+   .max-width{
+      @apply max-w-7xl mx-auto p-4
+   }
+}
