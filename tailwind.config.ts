@@ -14,7 +14,11 @@ export default {
       },
       fontFamily: {
         "work-sans": ["var(--font-work-sans)"],
-      }
+      },
+      // animation: {
+      //   'spin-slow': 'spin 20s linear infinite',
+      //   'spin-slower': 'spin 40s linear infinite',
+      // }
     },
   },
   plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
