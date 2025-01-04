@@ -9,7 +9,7 @@ export default async function Navbar() {
    return (
       <header className="px-5 py-2
        shadow-sm sticky top-0 z-50 border-gray-800 border-b bg-gray-900">
-         <nav className="flex items-center justify-between max-w-screen-xl mx-auto ">
+         <nav className="flex items-center justify-between max-w-screen-xl mx-auto font-semibold">
             <Link href="/" className="flex flex-row items-center">
                <Image
                   src="/logo.png"
