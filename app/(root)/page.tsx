@@ -1,3 +1,4 @@
+import EventsCard from "@/components/EventsCard";
 import SearchForm from "../../components/SearchForm";
 
 export default async function Home({ searchParams }: { searchParams: Promise<{ query?: string }>}) {
@@ -11,10 +12,17 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
                      Solve, Compete and Win
                   </span>
                </h3>
-               <h1 className="text-extrabold">Crack Complex Problems, Showcase Algorithmic Brilliance and Build Connections</h1>
+               <h1 className="text-extrabold mb-6">Crack Complex Problems, Showcase Algorithmic Brilliance and Build Connections</h1>
                <p className="text-normal">Participate in Challenging Events, Master Algorithmic Logic, and Dominate the Competitive Programming Arena.</p>
                <SearchForm query={query} />               
             </div> 
+         </section>
+         <section className="flex-center flex-col gap-4 mt-8 mb-10 max-width">
+            <div className="w-full  pl-10">
+               <p className="query-text plain-line">
+                  {query ? `${query}`: "All Events"}
+               </p>               
+            </div>
          </section>
       </>
    )
