@@ -84,7 +84,7 @@ body {
       @apply tag max-w-[280px] md:max-w-[300px] text-base md:text-lg font-bold
    }
    .text-extrabold {
-      @apply text-5xl md:text-6xl font-extrabold mb-6 text-gray-200 max-w-[900px]
+      @apply text-5xl md:text-6xl font-extrabold text-gray-200 max-w-[900px]
    }
    .text-normal {
       @apply text-base md:text-lg mb-8 text-gray-400 max-w-[600px]
@@ -120,6 +120,12 @@ body {
    }
    .search-form {
       @apply max-w-xl w-full min-h-[60px] border-none mt-8 px-5 flex flex-row items-center gap-2;
+   }
+   .query-text {
+      @apply text-left max-w-md md:max-w-lg text-base md:text-lg font-normal
+   }
+   .plain-line {
+      @apply before:content-[''] before:border-r-2 before:border-r-white before:mr-4
    }
    
 }
