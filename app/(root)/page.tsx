@@ -22,6 +22,9 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
                <p className="query-text plain-line">
                   {query ? `${query}`: "All Events"}
                </p>               
+            </div>            
+            <div className="w-full border-gray-800 border-[1px] grid grid-cols-1 sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-2 p-4 ">
+               <EventsCard />               
             </div>
          </section>
       </>
