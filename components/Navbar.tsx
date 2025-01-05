@@ -19,7 +19,7 @@ export default async function Navbar() {
                   priority
                   className="rounded-full"
                />
-               <h2>| Directory</h2>
+               <h2 className=" plain-line">Directory</h2>
             </Link>
 
             <div className="flex flex-row items-center gap-4">
