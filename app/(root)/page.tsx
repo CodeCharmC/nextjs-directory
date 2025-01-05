@@ -1,9 +1,21 @@
+import SearchForm from "../../components/SearchForm";
 
-
-export default function Page() {
+export default async function Home({ searchParams }: { searchParams: Promise<{ query?: string }>}) {
+   const query = (await searchParams).query;
    return (
-      <main className='flex min-h-screen flex-col items-center justify-between p-2'>
-         <h1>Home page</h1>
-      </main>
+      <>
+         <section className="dot_container w-full text-left flex-center">
+            <div className="max-width">
+               <h3 className="text-bold mb-4">
+                  <span className="pl-2">
+                     Solve, Compete and Win
+                  </span>
+               </h3>
+               <h1 className="text-extrabold">Crack Complex Problems, Showcase Algorithmic Brilliance and Build Connections</h1>
+               <p className="text-normal">Participate in Challenging Events, Master Algorithmic Logic, and Dominate the Competitive Programming Arena.</p>
+               <SearchForm query={query} />               
+            </div> 
+         </section>
+      </>
    )
 }
