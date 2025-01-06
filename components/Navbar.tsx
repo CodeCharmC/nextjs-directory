@@ -7,10 +7,9 @@ export default async function Navbar() {
    const session = await auth()
    
    return (
-      <header className="px-5 py-2
-       shadow-sm sticky top-0 z-50 border-gray-800 border-b bg-gray-900">
-         <nav className="flex items-center justify-between max-w-screen-xl mx-auto font-semibold">
-            <Link href="/" className="flex flex-row items-center">
+      <header className="nav-container">
+         <nav className="navbar">
+            <Link href="/" className="flex-center flex-row">
                <Image
                   src="/logo.png"
                   alt="Logo"
@@ -19,10 +18,10 @@ export default async function Navbar() {
                   priority
                   className="rounded-full"
                />
-               <h2 className=" plain-line">Directory</h2>
+               <h2 className="plain-line">Directory</h2>
             </Link>
 
-            <div className="flex flex-row items-center gap-4">
+            <div className="flex-center flex-row gap-4 pr-5">
                {session && session?.user ? (
                   <>
                      <Link href="/startup/create">
