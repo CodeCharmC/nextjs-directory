@@ -24,7 +24,7 @@ export default async function Navbar() {
             <div className="flex-center flex-row gap-4 pr-5">
                {session && session?.user ? (
                   <>
-                     <Link href="/startup/create">
+                     <Link href="/events/create">
                         <span>Create</span>
                      </Link>
                      <Form action={async () => {
