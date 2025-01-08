@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+   :root {
+      --background: 0 0% 100%;
+      --foreground: 224 71.4% 4.1%;
+      --card: var(--background);
+      --card-foreground: var(--foreground);
+      --border: 220 13% 91%;
+      --radius: 0.5rem;
+   }
+   .dark {
+      --background: 224 71.4% 4.1%;
+      --foreground: 210 20% 98%;
+      --card: var(--background);
+      --card-foreground: var(--foreground);
+   }
+   html {
+      @apply scroll-smooth
+   }
+   body {
+      @apply bg-background text-foreground;
+      font-family: Arial, Helvetica, sans-serif;
+   }
+}
+
+@layer utilities {
+   .flex-center{
+      @apply flex items-center justify-center;
+   }
+   .flex-between{
+      @apply flex items-center justify-between flex-row;
+   } 
+   .flex-start{
+      @apply flex items-start justify-start  flex-col; 
+   } 
+   .max-width{
+      @apply max-w-screen-2xl mx-auto p-4;
+   }
+   .text-bold {      
+      @apply tag max-w-[280px] md:max-w-[300px] text-base md:text-lg font-bold
+   }
+   .text-extrabold {
+      @apply text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-200 max-w-[900px]
+   }
+   .text-normal {
+      @apply text-base md:text-lg text-gray-400 max-w-[600px]
+   }
+   .nav-container {
+      @apply px-5 py-2 shadow-sm sticky top-0 z-50 border-gray-800 border-b bg-transparent bg-opacity-50 backdrop-blur-sm
+   }
+   .navbar {
+      @apply max-width flex items-center justify-between mx-auto font-semibold;
+   }
+   .hero-container {
+      @apply max-width lg:min-w-[1200px] flex-start text-left
+   }
+   .dot_container {
+      @apply w-full bg-transparent min-h-[530px] pattern flex-center flex-col py-10 px-6 ;
+   }
+   .pattern {
+      background-image: radial-gradient(
+      circle,
+      rgba(255, 182, 193, 0.4) 1px,
+      transparent 1px
+   );
+   background-size: 10px 10px;
+   background-position: center;
+   background-repeat: repeat;
+   }
+   .tag {
+      @apply bg-slate-950 text-gray-300 px-6 py-3 font-work-sans font-bold rounded-sm uppercase relative tag-tri;
+   }
+   .tag-tri {
+      @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-white before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-white after:border-l-[10px] after:border-l-transparent;
+   }   
+   .small-btn{
+      @apply w-[50px] h-[50px] rounded-full bg-gray-950 flex-center !important;
+   }
+   .search-form {
+      @apply max-w-xl w-full min-h-[60px] border-none mt-4 px-5 flex flex-row items-center gap-2;
+   }
+   .search-input{
+      @apply pl-5 pr-40 rounded-[80px] text-base md:text-lg text-gray-950 font-semibold w-full min-h-[60px] placeholder:text-gray-400 placeholder:text-base bg-gray-200 focus:ring-2 focus:ring-gray-400 border-gray-800 border-[1px];
+   }
+   .query-text {
+      @apply text-left max-w-md md:max-w-lg text-lg md:text-lg font-medium capitalize
+   }
+   .plain-line {
+      @apply before:content-[''] before:border-r-2 before:border-r-white before:mr-4
+   }
+   .cards-container {
+      @apply w-full border-gray-800 border-[1px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1 p-4 
+   }
+   .card-container {
+      @apply p-4 m-2 border-gray-800 border-[1px] max-w-full sm:max-w-[350px] md:max-w-[450px] min-h-[400px]    rounded-md hover:shadow-xl hover:shadow-gray-800 hover:cursor-pointer hover:scale-105 hover:z-40 hover:transition-all hover:ease-in-out hover:duration-300 hover:delay-100 
+   } 
+   .card-text {
+      @apply text-start text-gray-200
+   }
+   .card-normaltext {
+      @apply text-base md:text-lg font-normal
+   }  
+   .card-bigtext {
+      @apply text-xl md:text-2xl font-semibold
+   }  
+   .card-extrabigtext {
+      @apply text-2xl md:text-3xl font-extrabold
+   }  
+   .details-btn{
+      @apply w-[100px] h-[40px] rounded-md bg-gray-950 flex-center text-xl md:text-2xl font-medium !important;
+   }
+}
