@@ -1,6 +1,8 @@
 import EventsCard from "@/components/EventsCard";
 import SearchForm from "@/components/SearchForm";
-
+import { client } from "@/sanity/lib/client";
+import { EVENTS_QUERY } from "@/sanity/lib/queries";
+/*
 const Post = [
    {
       _createdAt: "2023-05-01",
@@ -74,11 +76,12 @@ const Post = [
       image:"https://cdn.pixabay.com/photo/2016/11/17/23/29/programming-1832991_1280.png"
    },
 ]
-
+*/
 export default async function Home({ searchParams }: {
    searchParams: Promise<{ query?: string }>
 }) {
    const query = (await searchParams).query;
+   const Post = await client.fetch(EVENTS_QUERY);
    return (
       <>
          <section className="dot_container w-full">
