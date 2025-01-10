@@ -1,14 +1,14 @@
 import { formatDate } from "@/lib/utils"
+import { Author, Events } from "@/sanity/types"
 import { Eye, HashIcon, Image } from "lucide-react"
 import Link from "next/link"
 
-// export default function EventsTypeCard() {
-// }
+export type EventsTypeCard = Omit<Events, "author"> & { author?: Author}
 
 export default async function EventsCard(
    { post }: { post: EventsTypeCard }   
 ) {
-   const { _createdAt, _id, views, author: {_id:authorId, name }, category, description, image, title } = await post
+   const { _createdAt, _id, views, author, category, description, image, title } = await post
    return (
       <li className="card-container card-text ">
 
@@ -22,15 +22,15 @@ export default async function EventsCard(
 
          <div className="flex-between gap-2">
             <div className="flex-start font-semibold text-lg pt-2 pb-2">
-               <Link href={`/user/${authorId}`}>
-                  <p className="card-bigtext line-clamp-1">{name}</p>
+               <Link href={`/user/${author?._id}`}>
+                  <p className="card-bigtext line-clamp-1">{author?.name}</p>
                </Link>
                <Link href={`/events/${_id}`}>
                   <p className="card-extrabigtext">{title}</p>
                </Link>                       
             </div>
             <div className="rounded-full flex-center ">
-               <Link href={`/user/${authorId}`}>
+               <Link href={`/user/${author?._id}`}>
                   <Image width={50} xHeight={50} className="text-gray-200 rounded-full" />
                </Link>
             </div>
@@ -45,7 +45,7 @@ export default async function EventsCard(
          </div>
 
          <div className="flex-between pt-2 pb-2 gap-2">
-            <Link href={`/?query=${category.toLowerCase()}`} className="card-normaltext flex-center flex-row gap">
+            <Link href={`/?query=${category?.toLowerCase()}`} className="card-normaltext flex-center flex-row gap">
                <HashIcon width={12} className="text-gray-200" />
                <p>{category}</p>
             </Link>            
@@ -57,3 +57,7 @@ export default async function EventsCard(
       </li>
    )
 }
+
+/**
+ * To fetch new posts from the database through sanity GROQ open src querying language by 1st visualizing the queries in sanity studios vision tab then creating them independently in code at queries.ts then extracting them and automatic type safety using sanities typegen and then using them here
+ */

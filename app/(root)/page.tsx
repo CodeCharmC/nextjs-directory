@@ -1,4 +1,4 @@
-import EventsCard from "@/components/EventsCard";
+import EventsCard, { EventsTypeCard } from "@/components/EventsCard";
 import SearchForm from "@/components/SearchForm";
 import { client } from "@/sanity/lib/client";
 import { EVENTS_QUERY } from "@/sanity/lib/queries"; 
@@ -30,7 +30,7 @@ export default async function Home({ searchParams }: {
             </div>            
             <ul className="cards-container">
                {Post?.length > 0 ? (
-                  Post.map((post: any) => (
+                  Post.map((post: EventsTypeCard) => (
                      <EventsCard key={post?._id} post={post} />
                   ))
                ) : (
