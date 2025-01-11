@@ -11,7 +11,8 @@ export default async function Page(
    if (!Post) return notFound()
    return (
       <>
-         page no {Post }         
+         <h1 className="flex-center ">page no {Post }</h1>
+                  
       </>
    )
 }
