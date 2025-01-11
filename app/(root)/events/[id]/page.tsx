@@ -1,5 +1,6 @@
 import { client } from "@/sanity/lib/client"
 import { EVENTS_BY_ID_QUERY } from "@/sanity/lib/queries"
+import { notFound } from "next/navigation"
 
 
 export default async function Page(
@@ -7,7 +8,7 @@ export default async function Page(
 ) {
    const id = (await params).id
    const { data: Post } = await client.fetch(EVENTS_BY_ID_QUERY, { id })   
-   if (!Post) return null
+   if (!Post) return notFound()
    return (
       <>
          page no {Post }         
