@@ -7,7 +7,8 @@ export default async function Home({ searchParams }: {
    searchParams: Promise<{ query?: string }>
 }) {
    const query = (await searchParams).query;
-   const {data: Post } = await sanityFetch({ query: EVENTS_QUERY });
+   const params = {search: query || null}
+   const {data: Post } = await sanityFetch({ query: EVENTS_QUERY, params });
    return (
       <>
          <section className="dot_container w-full">
