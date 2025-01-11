@@ -1,13 +1,13 @@
 import EventsCard, { EventsTypeCard } from "@/components/EventsCard";
 import SearchForm from "@/components/SearchForm";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import { EVENTS_QUERY } from "@/sanity/lib/queries"; 
 
 export default async function Home({ searchParams }: {
    searchParams: Promise<{ query?: string }>
 }) {
    const query = (await searchParams).query;
-   const Post = await client.fetch(EVENTS_QUERY); 
+   const {data: Post } = await sanityFetch({ query: EVENTS_QUERY });
    return (
       <>
          <section className="dot_container w-full">
