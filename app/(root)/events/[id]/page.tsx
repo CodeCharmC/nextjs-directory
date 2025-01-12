@@ -24,7 +24,16 @@ export default async function Page(
                <h1 className="text-extrabold">{post.title}</h1>               
                <p className="text-normal">{post.description}</p>               
             </div> 
-         </section>         
+         </section> 
+         <section className="flex-center flex-col gap-4 mt-8 mb-10 max-width">
+            <div className="max-w-[900px] min-w-[180px] max-h-[500px] min-h-[150px] flex-center ml-6 mr-6">
+               <img
+                  src={post.image}
+                  alt="thumbnail"
+                  className="w-full h-full rounded-xl"
+               />
+            </div>
+         </section>
       </>
    )
 }
