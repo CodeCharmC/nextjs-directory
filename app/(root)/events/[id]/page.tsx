@@ -8,12 +8,11 @@ export default async function Page(
    { params }: { params: Promise<{ id: string }> }   
 ) {
    const id = (await params).id
-   const { data: Post } = await client.fetch(EVENTS_BY_ID_QUERY, { id })   
-   if (!Post) return notFound()
+   const  post  = await client.fetch(EVENTS_BY_ID_QUERY, { id })    
+   if (!post) return notFound()   
    return (
       <>
-         <h1 className="flex-center ">page no {Post }</h1>
-                  
+         <h1 className="flex-center ">page no {post?.title}</h1>                  
       </>
    )
 }

@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     ]
   },
   experimental: {
+    scrollRestoration: false,
     ppr: "incremental" 
   },
   devIndicators: {
