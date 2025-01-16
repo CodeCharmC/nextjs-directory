@@ -30,3 +30,9 @@ export const EVENTS_BY_ID_QUERY =
    image,
    pitch,
 }`);
+
+export const EVENTS_VIEWS_QUERY = defineQuery(`
+   *[_type == "events" && _id == $id][0]{
+      _id, views
+   }
+`);
