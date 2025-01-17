@@ -10,5 +10,8 @@ declare module "next-auth" {
       id: string
       login: string
       bio: string
+   }   
+   interface Session { 
+      id: string
    }
 }
