@@ -24,6 +24,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
                bio: bio || '',
             })
          }
+         return true
       },
 
       async jwt({ token, profile, account }) {
