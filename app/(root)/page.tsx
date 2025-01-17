@@ -1,3 +1,4 @@
+import { auth } from "@/auth";
 import EventsCard, { EventsTypeCard } from "@/components/EventsCard";
 import SearchForm from "@/components/SearchForm";
 import { sanityFetch, SanityLive } from "@/sanity/lib/live";
@@ -6,8 +7,12 @@ import { EVENTS_QUERY } from "@/sanity/lib/queries";
 export default async function Home({ searchParams }: {
    searchParams: Promise<{ query?: string }>
 }) {
-   const query = (await searchParams).query;
-   const params = {search: query || null}
+   const query = (await searchParams).query;   
+   const params = { search: query || null }
+   
+   const session = await auth();
+   console.log(session);
+
    const {data: Post } = await sanityFetch({ query: EVENTS_QUERY, params });
    return (
       <>
