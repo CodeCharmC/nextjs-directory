@@ -37,12 +37,14 @@ export default async function Navbar() {
                      </Form>
                      <Link href={`user/${session?.user?.id}`}>
                         <span>{session?.user?.name}</span>
-
-
-
-
-
-                        
+                        <span>
+                           <img
+                              src={session?.user?.image || ""}
+                              alt="user"
+                              width={40}
+                              height={40}
+                           />
+                        </span>                        
                      </Link>
                   </>
                ) : (
