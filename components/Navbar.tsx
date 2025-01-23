@@ -35,14 +35,18 @@ export default async function Navbar() {
                            <span>Log Out</span>
                         </button>
                      </Form>
-                     <Link href={`user/${session?.user?.id}`}>
+                     <Link
+                        href={`user/${session?.user?.id}`}
+                        className=" flex flex-row gap-2 items-center"
+                     >
                         <span>{session?.user?.name}</span>
                         <span>
                            <img
                               src={session?.user?.image || ""}
                               alt="user"
-                              width={40}
-                              height={40}
+                              width={27}
+                              height={27}
+                              className="rounded-full "
                            />
                         </span>                        
                      </Link>
