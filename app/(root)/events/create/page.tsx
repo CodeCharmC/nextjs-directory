@@ -1,3 +1,4 @@
+import EventForm from "@/components/EventForm";
 
 export default function Create() {
    return (
@@ -5,6 +6,7 @@ export default function Create() {
          <section className="dot_container !min-h-[230px]">
             <h1 className="text-extrabold">Create New Event</h1>
          </section>
+         <EventForm />         
       </>
    )
 }
