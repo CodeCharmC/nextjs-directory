@@ -22,12 +22,12 @@ export default function EventForm() {
             required
             placeholder="events Title"
           />          
-        {errors.title && <p className="events-form_error">{errors.title}</p>}
+          {errors.title && <p className="events-form_error">{errors.title}</p>}
         </div>
         <div>
-        <label htmlFor="description" className="events-form_label">
-          Description
-        </label>
+          <label htmlFor="description" className="events-form_label">
+            Description
+          </label>
           <Textarea
             id="description"
             name="description"
@@ -38,6 +38,22 @@ export default function EventForm() {
 
           {errors.description && (
             <p className="events-form_error">{errors.description}</p>
+          )}
+        </div>
+        <div>
+          <label htmlFor="category" className="events-form_label">
+            Category
+          </label>
+          <Input
+            id="category"
+            name="category"
+            className="events-form_input"
+            required
+            placeholder="events Category (Tech, Health, Education...)"
+          />
+
+          {errors.category && (
+            <p className="events-form_error">{errors.category}</p>
           )}
         </div>
       </form>
