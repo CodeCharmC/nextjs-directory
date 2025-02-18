@@ -1,6 +1,6 @@
-
+"use client"
 export default function EventForm() {
-   return (
+  return (
       <div>EventForm</div>
-   )
+  )
 }
