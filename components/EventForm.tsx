@@ -2,6 +2,7 @@
 
 import { Input } from "@/components/ui/input"
 import { useState } from "react";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function EventForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -22,6 +23,22 @@ export default function EventForm() {
             placeholder="events Title"
           />          
         {errors.title && <p className="events-form_error">{errors.title}</p>}
+        </div>
+        <div>
+        <label htmlFor="description" className="events-form_label">
+          Description
+        </label>
+          <Textarea
+            id="description"
+            name="description"
+            className="events-form_textarea"
+            required
+            placeholder="events Description"
+          />
+
+          {errors.description && (
+            <p className="events-form_error">{errors.description}</p>
+          )}
         </div>
       </form>
     </>
