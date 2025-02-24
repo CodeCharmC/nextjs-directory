@@ -41,6 +41,9 @@
    .max-width{
       @apply max-w-screen-2xl mx-auto p-4;
    }
+   .section_container {
+      @apply px-6 py-10 max-w-7xl mx-auto;
+   }
    .text-bold {      
       @apply tag max-w-[280px] md:max-w-[300px] text-base md:text-lg font-bold
    }
